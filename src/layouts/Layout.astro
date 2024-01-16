@@ -3,6 +3,11 @@ import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Navigation from '../components/Navigation.astro';
 
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/900.css';
+
 interface Props {
 	title: string;
 	description: string;
@@ -110,86 +115,6 @@ const { title, description } = Astro.props;
 		--whatsapp: #25d366;
 	}
 
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-Black.woff2') format('woff2');
-		font-weight: 900;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-BlackItalic.woff2') format('woff2');
-		font-weight: 900;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-BoldItalic.woff2') format('woff2');
-		font-weight: bold;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-Italic.woff2') format('woff2');
-		font-weight: normal;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-Light.woff2') format('woff2');
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-LightItalic.woff2') format('woff2');
-		font-weight: 300;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-Medium.woff2') format('woff2');
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-MediumItalic.woff2') format('woff2');
-		font-weight: 500;
-		font-style: italic;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Roboto';
-		src: url('/assets/fonts/Roboto-Regular.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
 	* {
 		-webkit-font-smoothing: antialiased;
 		-webkit-box-sizing: border-box;
@@ -239,7 +164,7 @@ const { title, description } = Astro.props;
 
 	body {
 		color: var(--gray);
-		font-family: 'Roboto';
+		font-family: 'Roboto', sans-serif;
 		font-size: 16px;
 		line-height: 1.5em;
 		margin: 0 auto;
