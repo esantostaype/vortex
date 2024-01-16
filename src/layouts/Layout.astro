@@ -34,18 +34,10 @@ const { title, description } = Astro.props;
 
 <script>
 	import LocomotiveScroll from 'locomotive-scroll';
+  
 	const scroller = new LocomotiveScroll({
 		el: document.querySelector("[data-scroll-container]"),
 		smooth: true
-	});
-	scroller.on('scroll', ( args: any ) => {
-		const elementsToAnimate = document.querySelectorAll('.about__image');
-
-		elementsToAnimate.forEach((element: HTMLElement) => {
-			if (scroller.scroll > (element.offsetTop - window.innerHeight * 0.8)) {
-				element.classList.add('is-inview');
-			}
-		});
 	});
 </script>
 
