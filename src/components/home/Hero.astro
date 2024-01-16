@@ -1,0 +1,172 @@
+<section class="hero" data-scroll-section>
+	<div class="hero__content main-row">
+		<div class="hero__caption" data-scroll data-scroll-speed="1">
+			<div class="hero__titles">
+				<h1 class="hero__title">
+                    <span class="highlight animate-fade-right animate-duration-1000 animate-ease-in-out animate-fill-both">Potencia</span><br>
+                    <span class="animate-fade-right animate-duration-1000 animate-delay-100 animate-ease-in-out animate-fill-both">tu presencia</span><br>
+                    <span class="animate-fade-right animate-duration-1000 animate-delay-200 animate-ease-in-out animate-fill-both">en línea</span></h1>
+				<h2 class="animate-fade-right animate-duration-1000 animate-delay-300 animate-ease-in-out animate-fill-both">y haz crecer tu marca.</h2>
+			</div>
+			<button class="main-button animate-fade-right animate-duration-1000 animate-delay-[400ms] animate-ease-in-out animate-fill-both" id="main-button">
+				<span class="main-button__label">Comienza Ahora</span>
+				<div class="main-button__icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16px" fill="#fff">
+						<use xlink:href="/images/icons.svg#arrow"></use>
+					</svg>
+				</div>
+			</button>
+		</div>
+	</div>
+	<div class="hero__image">
+		<div class="hero__video animate-fade animate-duration-2000 animate-delay-[400ms] animate-ease-in-out animate-fill-both" data-scroll data-scroll-speed="2">
+			<div class="hero__video__mask">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" style="enable-background:new 0 0 200 100;" xml:space="preserve">
+					<use xlink:href="/images/icons.svg#iso-bg"></use>
+				</svg>
+			</div>
+			<video autoplay muted loop poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/oceanshot.jpg">
+				<source src="/images/vortex-video.mp4" />
+			</video>
+		</div>
+        <div class="animate-fade animate-duration-2000 animate-delay-[600ms] animate-ease-in-out animate-fill-both">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 100" fill="none" class="iso-stroke" data-scroll data-scroll-speed="6">
+                <use xlink:href="/images/icons.svg#iso-stroke"></use>
+            </svg>
+        </div>
+	</div>
+</section>
+
+<style>
+    .hero {
+        background: var(--dark);
+        color: #fff;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero__content {
+        align-items: center;
+        display: flex;
+        height: 100vh;
+        position: relative;
+        z-index: 3;
+    }
+
+    .hero__caption {
+        max-width: 60%;
+    }
+
+    .hero__titles {
+        font-size: 4.25em;
+        font-weight: 300;
+        line-height: 1em;
+        margin-bottom: 60px;
+    }
+
+    .hero__title {
+        font-size: 1.66em;
+        font-weight: bold;
+        line-height: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .hero__title span {
+        display: inline-block;
+    }
+
+    .hero__title span.highlight {
+        border-radius: 0.25rem;
+        background: var(--redGradient);
+        color: #000;
+        line-height: 0.8em;
+        mix-blend-mode: lighten;
+        padding: 6px 8px;
+    }
+
+    .hero__image {
+        height: 80vh;
+        position: absolute;
+        right: 10vh;
+        top: 10vh;
+        width: 60%;
+    }
+
+    .hero__image svg.iso-stroke {
+        height: 140vh;
+        left: 50%;
+        opacity: 0.25;
+        position: absolute;
+        right: 0;
+        stroke: #fff;
+        top: -20vh;
+        transform: translateX(-50%);
+        width: auto;
+        z-index: 2;
+    }
+
+    .hero__video {
+        height: 100%;
+        mix-blend-mode: lighten;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .hero__video video {
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .hero__video__mask {
+        height: 100.1%;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .hero__video__mask svg {
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        width: auto;
+    }
+
+    .hero__image:before {
+        background: var(--purpleGradient);
+        border-radius: 1000px;
+        bottom: -50%;
+        content: '';
+        display: block;
+        filter: blur(40vh);
+        height: 100vh;
+        opacity: 0.4;
+        right: -20vh;
+        width: 100vh;
+        position: absolute;
+    }
+
+    .hero__image:after {
+        background: var(--blueGradient);
+        border-radius: 1000px;
+        content: '';
+        display: block;
+        filter: blur(40vh);
+        height: 100vh;
+        opacity: 0.4;
+        right: -20vh;
+        width: 100vh;
+        top: -50%;
+        position: absolute;
+    }
+</style>

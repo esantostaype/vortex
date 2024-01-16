@@ -1,0 +1,263 @@
+<section class="portfolio block-section" data-scroll-section>
+	<div class="main-row-normal portfolio__content">
+		<h3 class="block-section__title">Lo que hacemos</h3>
+	</div>
+	<ul class="portfolio__list">
+		<li class="portfolio__item" open-modal="port1">
+			<div class="portfolio__image">
+				<img src="/images/portfolio/portfolio4.png">
+			</div>
+		</li>
+		<li class="portfolio__item" open-modal="port2">
+			<div class="portfolio__image">
+				<img src="/images/portfolio/portfolio3c.png">
+			</div>
+		</li>
+		<li class="portfolio__item" open-modal="port3">
+			<div class="portfolio__image">
+				<img src="/images/portfolio/portfolio2b.png">
+			</div>
+		</li>
+	</ul>
+</section>
+
+<section class="portfolio__detail" id="port1">
+	<button close-modal class="portfolio__detail__close">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="10px" fill="#fff">
+			<use xlink:href="/images/icons.svg#close"></use>
+		</svg>
+	</button>
+	<div class="portfolio__detail__content">
+		<div class="portfolio__detail__header">
+			<div class="portfolio__detail__caption">
+				<h2 class="portfolio__detail__title">JVS Control</h2>
+				<span class="portfolio__detail__category">Diseño y Desarrollo de Sitio Web</span>
+			</div>
+			<ul class="portfolio__detail__tech">
+				<li><img src="/images/wordpress.svg"></li>
+				<li><img src="/images/html-5.svg"></li>
+				<li><img src="/images/css-3.svg"></li>
+				<li><img src="/images/js.svg"></li>
+			</ul>
+		</div>
+		<ul class="portfolio__detail__gallery">
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/JVS-Control.png">
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="portfolio__detail" id="port2">
+	<button close-modal class="portfolio__detail__close">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="10px" fill="#fff">
+			<use xlink:href="/images/icons.svg#close"></use>
+		</svg>
+	</button>
+	<div class="portfolio__detail__content">
+		<div class="portfolio__detail__header">
+			<div class="portfolio__detail__caption">
+				<h2 class="portfolio__detail__title">Drumlab</h2>
+				<span class="portfolio__detail__category">Branding</span>
+			</div>
+		</div>
+		<ul class="portfolio__detail__gallery">
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/drumlab-01.png">
+				</div>
+			</li>
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/drumlab-02.png">
+				</div>
+			</li>
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/drumlab-03.png">
+				</div>
+			</li>
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/drumlab-04.png">
+				</div>
+			</li>
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/drumlab-05.png">
+				</div>
+			</li>
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/drumlab-06.png">
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="portfolio__detail" id="port3">
+	<button close-modal class="portfolio__detail__close">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="10px" fill="#fff">
+			<use xlink:href="/images/icons.svg#close"></use>
+		</svg>
+	</button>
+	<div class="portfolio__detail__content">
+		<div class="portfolio__detail__header">
+			<div class="portfolio__detail__caption">
+				<h2 class="portfolio__detail__title">Izifix</h2>
+				<span class="portfolio__detail__category">Diseño y Desarrollo de Sistema Web</span>
+			</div>
+			<ul class="portfolio__detail__tech">
+				<li><img src="/images/laravel.svg"></li>
+				<li><img src="/images/html-5.svg"></li>
+				<li><img src="/images/css-3.svg"></li>
+				<li><img src="/images/js.svg"></li>
+			</ul>
+		</div>
+		<ul class="portfolio__detail__gallery">
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/izifix-01.png">
+				</div>
+			</li>
+			<li>
+				<div class="portfolio__image">
+					<img src="/images/portfolio/izifix-02.png">
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<style>
+    .portfolio {
+        padding: 40px 0 0;
+    }
+
+    .portfolio__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .portfolio__item {
+        background: #000;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .portfolio__item img {
+        transition-timing-function: cubic-bezier(0.1, 1, 1, 1);
+        transition-duration: 0.6s;
+    }
+
+    .portfolio__item:hover img {
+        opacity: 0.5;
+        rotate: 2deg;
+        transform: scale(1.1);
+    }
+
+    .portfolio__item:nth-child(-n +3) {
+        flex-basis: calc(100% / 3);
+    }
+
+    .portfolio__item:nth-child(n+4) {
+        flex-basis: calc(100% / 2);
+    }
+
+    .portfolio__item:nth-child(n +6) {
+        flex-basis: calc(100% / 3);
+    }
+
+    .portfolio__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .portfolio__image img {
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        width: 100%;
+    }
+
+    .portfolio__detail {
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        left: 0;
+        opacity: 0;
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        transition-timing-function: cubic-bezier(0.1, 1, 1, 1);
+        transition-duration: 0.3s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 9999999999;
+    }
+
+    .portfolio__detail.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .portfolio__detail__content {
+        max-width: 1400px;
+    }
+
+    .portfolio__detail__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    .portfolio__detail__title {
+        font-weight: bold;
+        font-size: 1.125em;
+        line-height: 1em;
+    }
+
+    .portfolio__detail__tech {
+        align-items: center;
+        display: flex;
+    }
+
+    .portfolio__detail__tech li {
+        margin-left: 10px;
+    }
+
+    .portfolio__detail__tech img {
+        width: 24px;
+    }
+
+    .portfolio__detail__category {
+        font-size: 14px;
+        line-height: 1em;
+    }
+
+    .portfolio__detail__close {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        display: flex;
+        height: 32px;
+        justify-content: center;
+        position: fixed;
+        right: 30px;
+        top: 24px;
+        transition: all 0.3s ease;
+        width: 32px;
+        z-index: 99;
+    }
+
+    .portfolio__detail__close:hover {
+        transform: scale(1.1);
+    }
+
+    .portfolio__detail__close:active {
+        transform: scale(0.97);
+    }
+</style>

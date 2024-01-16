@@ -1,0 +1,64 @@
+<header class="site-header">
+    <div class="site-header__content">
+        <a itemprop="url" href="/" rel="home" class="logo">
+            <img src="/images/vortex.svg">
+        </a>
+        <button class="nav-mobile" id="nav-mobile">
+            <svg x="0px" y="0px" viewBox="0 0 20 20" width="20px" fill="#fff">
+                <use xlink:href="/images/icons.svg#nav-mobile"></use>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<style>
+    .site-header {
+        left: 0;
+        position: fixed;
+        top: 0;
+        transition: all 0.3s ease;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .site-header__content {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+        transition: all 0.3s ease;
+    }
+
+    .site-header.sticky {
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+    }
+
+    .sticky .site-header__content{
+        padding: 16px 20px;
+    }
+
+    .site-header.hide {
+        top: -148px;
+    }
+
+    .logo{
+        width: 206px;
+    }
+
+    .nav-mobile{
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 48px;
+        cursor: pointer;
+        display: flex;
+        height: 48px;
+        justify-content: center;
+        transition: all 0.3s ease;
+        width: 48px;
+    }
+
+    .nav-mobile:hover{
+        background: rgba(255, 255, 255, 0.2);
+    }
+</style>
