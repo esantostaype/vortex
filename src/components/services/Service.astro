@@ -1,0 +1,56 @@
+---
+import Icon from '../ui/Icon.astro';
+const { service } = Astro.props;
+const { color, icon, name, shortDescription } = service.attributes;
+---
+
+<li class="service__item grid__item">
+    <h2 class="service__item__title">{ name }</a></h2>
+    <div class="service__item__icon">
+        <Icon width='48px' height='48px' name={ icon } />
+        <span style={`background-color: #${ color };`}></span>
+    </div>
+    <p>{ shortDescription }</p>
+</li>
+
+<style>
+    .service__item__title {
+        color: var(--dark);
+        font-size: 1.125em;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .service__item__icon {
+        align-items: center;
+        border-radius: 40px;
+        display: flex;
+        height: 80px;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 80px;
+    }
+
+    .service__item__icon span {
+        background-color: var(--gray);
+        left: 0;
+        height: 100%;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .service__item__icon svg {
+        position: relative;
+        z-index: 2;
+    }
+
+    .service__item p {
+        font-size: 14px;
+        line-height: 1.5em;
+        margin: 16px 0 24px;
+    }
+</style>

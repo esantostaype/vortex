@@ -1,0 +1,71 @@
+---
+import Icon from '../../components/ui/Icon.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getServices } from '../../services/vortex'
+
+interface ServiceData {
+    attributes: {
+        color: string;
+        icon: string;
+        name: string;
+        shortDescription: string;
+        slug: string;
+    };
+}
+
+export async function getStaticPaths() {
+    const services: ServiceData[] = await getServices();
+    return services.map(( service ) => ({
+        params: { slug: service.attributes.slug },
+        props: { service }
+    }) )
+}
+
+const { service } = Astro.props;
+const { color, icon, name, shortDescription } = service.attributes;
+---
+
+<Layout title={ `${ name } | Vortex Studio` } description={ shortDescription }>
+    <section class="service-page page main-row-normal">
+        <h1 class="service-page__title">{ name }</h1>
+        <p>{ shortDescription }</p>
+    </section>
+    <span class="service-page__color" style={`background-color: #${ color };`}></span>
+    <section class="service-page page main-row-normal">
+        <h1 class="service-page__title">{ name }</h1>
+        <p>{ shortDescription }</p>
+    </section>
+    <section class="service-page page main-row-normal">
+        <h1 class="service-page__title">{ name }</h1>
+        <p>{ shortDescription }</p>
+    </section>
+    <section class="service-page page main-row-normal">
+        <h1 class="service-page__title">{ name }</h1>
+        <p>{ shortDescription }</p>
+    </section>
+    <section class="service-page page main-row-normal">
+        <h1 class="service-page__title">{ name }</h1>
+        <p>{ shortDescription }</p>
+    </section>
+    <section class="service-page page main-row-normal">
+        <h1 class="service-page__title">{ name }</h1>
+        <p>{ shortDescription }</p>
+    </section>
+</Layout>
+
+<style>
+    .service-page__title {
+        font-size: 4em;
+    }
+    
+    .service-page__color{
+        border-radius: 100vh;
+        height: 150vh;
+        left: 50%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 150vw;
+        z-index: -1;
+    }
+</style>

@@ -1,23 +1,23 @@
-<section class="portfolio block-section" data-scroll-section>
-	<div class="main-row-normal portfolio__content">
-		<h3 class="block-section__title">Lo que hacemos</h3>
+---
+import PortfolioItem from './PortfolioItem.astro';
+
+interface Props {
+    title: string;
+    projects: [];
+}
+const { title, projects } = Astro.props;
+---
+
+<section class="main-row portfolio block-section" data-scroll-section>
+	<div class="portfolio__content">
+		<h3 class="block-section__title">{ title }</h3>
 	</div>
 	<ul class="portfolio__list">
-		<li class="portfolio__item" open-modal="port1">
-			<div class="portfolio__image">
-				<img src="/images/portfolio/portfolio4.png">
-			</div>
-		</li>
-		<li class="portfolio__item" open-modal="port2">
-			<div class="portfolio__image">
-				<img src="/images/portfolio/portfolio3c.png">
-			</div>
-		</li>
-		<li class="portfolio__item" open-modal="port3">
-			<div class="portfolio__image">
-				<img src="/images/portfolio/portfolio2b.png">
-			</div>
-		</li>
+		{ 
+			projects && projects.length > 0
+			? projects.map(( project ) => ( <PortfolioItem project={ project } /> ))
+			: "No Project Found"
+		}
 	</ul>
 </section>
 
@@ -138,47 +138,6 @@
     .portfolio__list {
         display: flex;
         flex-wrap: wrap;
-    }
-
-    .portfolio__item {
-        background: #000;
-        cursor: pointer;
-        overflow: hidden;
-    }
-
-    .portfolio__item img {
-        transition-timing-function: cubic-bezier(0.1, 1, 1, 1);
-        transition-duration: 0.6s;
-    }
-
-    .portfolio__item:hover img {
-        opacity: 0.5;
-        rotate: 2deg;
-        transform: scale(1.1);
-    }
-
-    .portfolio__item:nth-child(-n +3) {
-        flex-basis: calc(100% / 3);
-    }
-
-    .portfolio__item:nth-child(n+4) {
-        flex-basis: calc(100% / 2);
-    }
-
-    .portfolio__item:nth-child(n +6) {
-        flex-basis: calc(100% / 3);
-    }
-
-    .portfolio__image {
-        height: 100%;
-        width: 100%;
-    }
-
-    .portfolio__image img {
-        height: 100%;
-        object-fit: cover;
-        position: relative;
-        width: 100%;
     }
 
     .portfolio__detail {

@@ -1,26 +1,32 @@
 ---
 import { Image } from 'astro:assets';
+import { API_URL } from '../../config';
+
+const { about } = Astro.props;
+const { title, subtitle, content, image } = about;
+const aboutImage = image.data.attributes.url;
 ---
 <section class="about block-section" data-scroll-section>
 	<div class="main-row about__content">
 		<div class="about__caption" data-scroll-repeat data-scroll data-scroll-speed="1">
-			<h3 class="about__subtitle">Somos Vortex Studio</h3>
-			<h2 class="about__title">Te ayudamos a superar los más grandes desafíos, con el objetivo de alcanzar tu potencial.</h2>
-			<p><strong>Estamos comprometidos contigo.</strong> Sentimos tu marca como nuestra, convirtiendo tu éxito en nuestro principal logro.</p>
+			<h3 class="about__subtitle">{ subtitle }</h3>
+			<h2 class="about__title">{ title }</h2>
+			<p>{ content }</p>
 		</div>
 		<figure class="about__image" data-scroll-repeat data-scroll data-scroll-speed="2">
-            <Image src="/images/team.svg" width="768" height="586" alt="Somos Vortex Studio"/>
+            <Image src={ aboutImage } width="768" height="586" alt={ subtitle }/>
 		</figure>
 	</div>
 </section>
 
 <style>
     .about {
+        overflow: initial;
         padding-bottom: 0;
         position: relative;
     }
 
-    .about:before {
+    /* .about:before {
         background: #000;
         content: '';
         left: -10%;
@@ -30,7 +36,7 @@ import { Image } from 'astro:assets';
         transform: rotate(-15deg);
         width: 120%;
         z-index: 1;
-    }
+    } */
 
 
     .about__content {
@@ -43,7 +49,7 @@ import { Image } from 'astro:assets';
     .about__caption {
         color: #000;
         flex: 1;
-        margin-top: -10%;
+        margin-right: 60px;
     }
 
     .about__image {
@@ -66,5 +72,9 @@ import { Image } from 'astro:assets';
         font-weight: bold;
         line-height: 1.2em;
         margin-bottom: 10px;
+    }
+
+    .about__caption p {
+        width: 80%;
     }
 </style>

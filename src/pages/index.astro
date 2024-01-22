@@ -4,13 +4,21 @@ import Hero from '../components/home/Hero.astro';
 import About from '../components/home/About.astro';
 import Services from '../components/home/Services.astro';
 import Portfolio from '../components/home/Portfolio.astro';
+import { getHome, getProjects, getServices } from '../services/vortex';
+
+const dataHome = await getHome();
+const services = await getServices();
+const projects = await getProjects();
+const about = dataHome.attributes.about;
+const hero = dataHome.attributes.hero;
+const { serviceTitle, portfolioTitle } = dataHome.attributes;
 ---
 
-<Layout title="Welcome to Astro." description="test">
-	<Hero/>
-	<About/>
-	<Services/>
-	<Portfolio/>
+<Layout title="Welcome to Astro." description="test" isHome >
+	<Hero hero={ hero } />
+	<About about={ about } />
+	<Services services={ services } title={ serviceTitle } />
+	<Portfolio projects={ projects } title={ portfolioTitle } />
 </Layout>
 
 <style>
